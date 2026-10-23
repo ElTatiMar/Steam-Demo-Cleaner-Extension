@@ -1,4 +1,4 @@
-# Steam Demo Cleaner - Browser Extension
+# Steam Demo Cleaner Extension
 
 A high-performance, native browser extension designed to scan, filter, and batch-clean Steam demos, playtests, beta trials, and unwanted free licenses from your account.
 
