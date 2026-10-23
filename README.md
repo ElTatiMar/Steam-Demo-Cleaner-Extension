@@ -1,8 +1,8 @@
 # Steam Demo Cleaner Extension
 
-A high-performance, native browser extension designed to scan, filter, and batch-clean Steam demos, playtests, beta trials, and unwanted free licenses from your account.
+A high-performance browser extension designed to scan, filter, and batch-clean Steam demos, playtests, beta trials, and unwanted free licenses from your account.
 
-Built directly upon the proven architecture blueprint of the **SteamDB Browser Extension** (`manifest.json` V3, background service worker, cross-browser compatibility layer, rate-limit protection, and MAIN-world session integration).
+Built directly upon the proven architecture blueprint of the [**SteamDB Browser Extension**](https://steamdb.info) (`manifest.json` V3, background service worker, cross-browser compatibility layer, rate-limit protection, and MAIN-world session integration).
 
 ---
 
@@ -108,3 +108,10 @@ steam-demo-cleaner/
 │   └── options.js       # Keyword manager & audit history
 └── README.md
 ```
+
+---
+
+## 👏 Credits & Acknowledgments
+
+- **[SteamDB](https://steamdb.info)** — Architectural inspiration, reference patterns, and community tools.
+- **[Jazzverso](https://github.com/Jazzverso)** — Project development and contributions.
