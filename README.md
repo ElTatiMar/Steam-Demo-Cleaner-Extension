@@ -43,9 +43,11 @@ Built directly upon the proven architecture blueprint of the **SteamDB Browser E
 2. Enable **Developer mode** (toggle switch in the top-right corner).
 3. Click the **Load unpacked** button.
 4. Select the `steam-demo-cleaner` folder:
-   ```
+
+   ```text
    c:\Users\Tati\Documents\Projects\Steam Demo Cleaner Extension\steam-demo-cleaner
    ```
+
 5. The **Steam Demo Cleaner** icon will appear in your browser toolbar!
 
 ---
@@ -76,6 +78,7 @@ Built directly upon the proven architecture blueprint of the **SteamDB Browser E
 ## ⚙️ Options & Custom Keywords
 
 Right-click the extension icon and choose **Options** (or click the Options link in the popup):
+
 - **Add Custom Keywords**: Add custom strings (e.g. `alpha`, `test server`, `stress test`) to match specific titles.
 - **Adjust Request Delay**: Fine-tune the interval between removal calls (500ms to 3000ms).
 - **Audit Log**: View or export the history of licenses removed using the cleaner.
@@ -84,7 +87,7 @@ Right-click the extension icon and choose **Options** (or click the Options link
 
 ## 📁 File Structure
 
-```
+```text
 steam-demo-cleaner/
 ├── manifest.json        # Manifest V3 configuration & permission rules
 ├── icons/               # 16px, 32px, 48px, 128px PNG and SVG icons
