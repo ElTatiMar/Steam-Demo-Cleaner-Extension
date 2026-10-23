@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Options · Steam Demo Cleaner</title>
+	<link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+	<header class="options-header">
+		<div class="container header-container">
+			<div class="logo-group">
+				<img src="../icons/icon48.png" alt="Logo" class="logo-img">
+				<div>
+					<h1>Steam Demo Cleaner</h1>
+					<p class="subtitle">Configuration &amp; License Cleaning Preferences</p>
+				</div>
+			</div>
+			<a href="https://store.steampowered.com/account/licenses/" target="_blank" class="btn btn-primary"
+				rel="noopener noreferrer">
+				Open Account Licenses
+			</a>
+		</div>
+	</header>
+
+	<main class="container main-content">
+		<!-- Section: Detection Keywords -->
+		<section class="card">
+			<div class="card-header">
+				<div class="card-icon">🏷️</div>
+				<div>
+					<h2>Detection Keywords</h2>
+					<p class="card-desc">Licenses containing any of these keywords will be classified and highlighted as
+						removable.</p>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="tags-container" id="keywords-tags"></div>
+				<div class="input-add-group">
+					<input type="text" id="new-keyword-input"
+						placeholder="Add keyword (e.g., 'alpha', 'stress test')..." class="text-input"
+						aria-label="Add new detection keyword">
+					<button type="button" id="btn-add-keyword" class="btn btn-secondary">Add Keyword</button>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section: Request Throttling & Safety -->
+		<section class="card">
+			<div class="card-header">
+				<div class="card-icon">⚙️</div>
+				<div>
+					<h2>Safety &amp; Performance</h2>
+					<p class="card-desc">Configure rate limiting and protection settings for batch removal operations.
+					</p>
+				</div>
+			</div>
+			<div class="card-body form-grid">
+				<div class="setting-row">
+					<div class="setting-info">
+						<label for="slider-delay" class="setting-label">API Request Delay</label>
+						<p class="setting-help">Delay between removal requests. 1000ms is recommended to avoid Steam
+							rate limits (HTTP 429 / Code 84).</p>
+					</div>
+					<div class="slider-control">
+						<input type="range" id="slider-delay" min="400" max="3000" step="100" value="1000">
+						<span id="label-delay-val" class="slider-val">1000 ms</span>
+					</div>
+				</div>
+
+				<div class="setting-row">
+					<div class="setting-info">
+						<label for="check-confirm" class="setting-label">Require Confirmation</label>
+						<p class="setting-help">Prompt for confirmation with license counts before executing any batch
+							removal.</p>
+					</div>
+					<label class="switch">
+						<input type="checkbox" id="check-confirm" checked>
+						<span class="slider round"></span>
+					</label>
+				</div>
+
+				<div class="setting-row">
+					<div class="setting-info">
+						<label for="check-backup" class="setting-label">Automatic JSON Backup</label>
+						<p class="setting-help">Automatically export a JSON file containing all selected package IDs and
+							names before cleaning.</p>
+					</div>
+					<label class="switch">
+						<input type="checkbox" id="check-backup" checked>
+						<span class="slider round"></span>
+					</label>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section: Audit Log & History -->
+		<section class="card">
+			<div class="card-header">
+				<div class="card-icon">📜</div>
+				<div>
+					<h2>Removal Audit Log</h2>
+					<p class="card-desc">Audit history of licenses removed using this extension.</p>
+				</div>
+			</div>
+			<div class="card-body">
+				<div class="history-controls">
+					<span id="history-count">0 items recorded</span>
+					<div class="history-buttons">
+						<button type="button" id="btn-export-history" class="btn btn-secondary btn-sm">Export
+							Log</button>
+						<button type="button" id="btn-clear-history" class="btn btn-danger btn-sm">Clear Log</button>
+					</div>
+				</div>
+				<div class="history-table-wrap">
+					<table class="history-table">
+						<thead>
+							<tr>
+								<th scope="col">Date</th>
+								<th scope="col">Package ID</th>
+								<th scope="col">License Name</th>
+							</tr>
+						</thead>
+						<tbody id="history-tbody">
+							<tr>
+								<td colspan="3" class="history-empty">No removed licenses recorded yet.</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+		<!-- Bottom Controls -->
+		<div class="bottom-actions">
+			<button type="button" id="btn-reset-defaults" class="btn btn-secondary">Reset to Defaults</button>
+			<span id="toast-msg" class="toast-msg">Preferences saved automatically.</span>
+		</div>
+	</main>
+
+	<script src="../scripts/common.js"></script>
+	<script src="options.js"></script>
+</body>
+
+</html>

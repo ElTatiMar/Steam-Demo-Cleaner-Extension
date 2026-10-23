@@ -1,0 +1,59 @@
+{
+  "manifest_version": 3,
+  "name": "Steam Demo Cleaner",
+  "version": "1.0.0",
+  "description": "Batch scan, filter, and clean Steam demos, playtests, and unwanted free licenses from your account.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://store.steampowered.com/*"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "icons/icon32.png",
+    "default_title": "Steam Demo Cleaner"
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options/options.html"
+  },
+  "content_scripts": [
+    {
+      "run_at": "document_end",
+      "matches": [
+        "https://store.steampowered.com/account/licenses*"
+      ],
+      "js": [
+        "scripts/common.js",
+        "scripts/content.js"
+      ],
+      "css": [
+        "styles/content.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "scripts/injected.js",
+        "icons/icon.svg",
+        "icons/icon16.png",
+        "icons/icon32.png",
+        "icons/icon48.png"
+      ],
+      "matches": [
+        "https://store.steampowered.com/*"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Steam Demo Cleaner</title>
+	<link rel="stylesheet" href="popup.css">
+</head>
+<body>
+	<header class="popup-header">
+		<div class="popup-logo-wrap">
+			<img src="../icons/icon32.png" alt="Steam Demo Cleaner" class="popup-logo">
+			<div>
+				<h1 class="popup-title">Steam Demo Cleaner</h1>
+				<span class="popup-version">v1.0.0</span>
+			</div>
+		</div>
+	</header>
+
+	<main class="popup-main">
+		<div id="status-card" class="status-card">
+			<div class="status-indicator-row">
+				<span class="status-dot" id="status-dot"></span>
+				<span class="status-text" id="status-text">Checking active tab...</span>
+			</div>
+			<p class="status-desc" id="status-desc">
+				Navigate to your Steam Account Licenses page to start cleaning.
+			</p>
+			<button type="button" class="btn btn-primary" id="btn-open-licenses">
+				🚀 Open Steam Licenses Page
+			</button>
+		</div>
+
+		<div class="quick-stats-section" id="quick-stats-section" style="display: none;">
+			<div class="quick-stat-box">
+				<span class="quick-stat-num" id="stat-removable">0</span>
+				<span class="quick-stat-label">Removable</span>
+			</div>
+			<div class="quick-stat-box">
+				<span class="quick-stat-num" id="stat-demos">0</span>
+				<span class="quick-stat-label">Demos</span>
+			</div>
+			<div class="quick-stat-box">
+				<span class="quick-stat-num" id="stat-playtests">0</span>
+				<span class="quick-stat-label">Playtests</span>
+			</div>
+		</div>
+
+		<div class="features-list">
+			<div class="feature-item">
+				<span class="feature-icon">⚡</span>
+				<span>Batch removes Demos, Playtests &amp; Trials</span>
+			</div>
+			<div class="feature-item">
+				<span class="feature-icon">🛡️</span>
+				<span>Rate-limiting protection &amp; auto-retry</span>
+			</div>
+			<div class="feature-item">
+				<span class="feature-icon">💾</span>
+				<span>JSON backup before removal</span>
+			</div>
+		</div>
+	</main>
+
+	<footer class="popup-footer">
+		<a href="#" id="link-options" class="footer-link">⚙️ Options &amp; Keywords</a>
+		<a href="https://github.com" target="_blank" rel="noopener noreferrer" class="footer-link muted">SteamDB Blueprint</a>
+	</footer>
+
+	<script src="../scripts/common.js"></script>
+	<script src="popup.js"></script>
+</body>
+</html>
