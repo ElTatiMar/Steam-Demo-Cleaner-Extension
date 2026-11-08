@@ -1,8 +1,5 @@
 # User & Backup Archives
 _OLD.7z
-*.7z
-*.rar
-*.tar.gz
 
 # Browser Extension Packages & Keys
 *.zip
